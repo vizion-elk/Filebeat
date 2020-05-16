@@ -6,10 +6,10 @@ Installed as an agent on your servers, Filebeat monitors the log files or locati
 
 ### Windows:
 
-1) As administrator, enter the following command in Powershell or download the zip file [here](https://github.com/themarcusaurelius/Filebeat/archive/master.zip).
+1) As administrator, enter the following command in Powershell or download the zip file [here](https://github.com/vizionelkhelp/Filebeat/archive/master.zip).
 
 ```
-Start-BitsTransfer -Source 'https://github.com/themarcusaurelius/Filebeat/archive/master.zip' -Destination 'C:\Users\Administrator\Downloads\filebeat.zip'
+Start-BitsTransfer -Source 'https://github.com/vizionelkhelp/Filebeat/archive/master.zip' -Destination 'C:\Users\Administrator\Downloads\filebeat.zip'
 ```
 
 2) Unzip the package and extract the contents to the `C:/` drive.
