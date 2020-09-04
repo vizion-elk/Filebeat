@@ -3,7 +3,6 @@
 filebeat.inputs:
 - type: log
   enabled: false
-  # Paths that should be crawled and fetched. Glob based paths.
   paths:
     - /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
@@ -32,6 +31,7 @@ setup.kibana:
   host: ""
   username: ""
   password: ""
+  ssl.verification_mode: none
 
 #================================ Outputs =====================================
 
@@ -39,6 +39,7 @@ setup.kibana:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["elasticsearch-api-endpoint"]
+  ssl.verification_mode: none
 
 #================================ Processors =====================================
 
