@@ -1,0 +1,99 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "columns": [
+                    "log.level",
+                    "message"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlight\": {\"fragment_size\": 2147483647, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"require_field_match\": false, \"fields\": {\"*\": {}}, \"pre_tags\": [\"@kibana-highlighted-field@\"]}, \"query\": {\"query\": \"event.module:nginx AND message:*\", \"language\": \"kuery\"}, \"highlightAll\": true, \"version\": true, \"index\": \"filebeat-*\", \"filter\": []}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Nginx error logs [Filebeat Nginx] ECS",
+                "version": 1
+            },
+            "id": "9eb25600-a1f0-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "search",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "url.original",
+                    "http.request.method",
+                    "http.response.status_code",
+                    "http.response.body.bytes"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlight\": {\"fragment_size\": 2147483647, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"require_field_match\": false, \"fields\": {\"*\": {}}, \"pre_tags\": [\"@kibana-highlighted-field@\"]}, \"query\": {\"query\": \"event.module:nginx AND url.original:*\", \"language\": \"kuery\"}, \"highlightAll\": true, \"version\": true, \"index\": \"filebeat-*\", \"filter\": []}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Nginx access logs [Filebeat Nginx] ECS",
+                "version": 1
+            },
+            "id": "6d9e66d0-a1f0-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "search",
+            "version": 4
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Access logs over time [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"type\": \"metrics\", \"aggs\": [], \"params\": {\"legend_position\": \"bottom\", \"show_grid\": 1, \"background_color_rules\": [{\"id\": \"3189aa80-a1f3-11e7-a062-a1c3587f4874\"}], \"axis_formatter\": \"number\", \"series\": [{\"point_size\": 1, \"fill\": 0.5, \"terms_field\": \"url.original\", \"line_width\": 1, \"color\": \"#68BC00\", \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"label\": \"Access logs\", \"formatter\": \"number\", \"axis_position\": \"right\", \"stacked\": \"none\", \"chart_type\": \"line\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"seperate_axis\": 0, \"split_mode\": \"everything\", \"split_filters\": [{\"color\": \"#68BC00\", \"id\": \"1db649a0-a1f3-11e7-a062-a1c3587f4874\"}]}], \"filter\": \"event.module:nginx AND fileset.name:access\", \"index_pattern\": \"filebeat-*\", \"axis_position\": \"left\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"time_field\": \"@timestamp\", \"type\": \"timeseries\", \"annotations\": [{\"ignore_global_filters\": 1, \"time_field\": \"@timestamp\", \"id\": \"970b1420-a1f3-11e7-a062-a1c3587f4874\", \"color\": \"#F00\", \"icon\": \"fa-tag\", \"index_pattern\": \"filebeat-*\", \"ignore_panel_filters\": 1}]}, \"title\": \"Access logs over time [Filebeat Nginx] ECS\"}"
+            },
+            "id": "1cfb1a80-a1f4-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Dashboards [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"type\": \"markdown\", \"aggs\": [], \"params\": {\"fontSize\": 12, \"markdown\": \"[Nginx logs overview](#/dashboard/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs) | [Nginx access and error logs](#/dashboard/046212a0-a2a1-11e7-928f-5dbe6f6f5519-ecs)\"}, \"title\": \"Dashboards [Filebeat Nginx] ECS\"}"
+            },
+            "id": "97109780-a2a5-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "Dashboard for the Filebeat Nginx module",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                },
+                "optionsJSON": "{\"darkTheme\": false}",
+                "panelsJSON": "[{\"col\": 1, \"panelIndex\": 11, \"row\": 5, \"id\": \"9eb25600-a1f0-11e7-928f-5dbe6f6f5519-ecs\", \"size_x\": 12, \"columns\": [\"log.level\", \"message\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 16, \"row\": 8, \"id\": \"6d9e66d0-a1f0-11e7-928f-5dbe6f6f5519-ecs\", \"size_x\": 12, \"columns\": [\"url.original\", \"http.request.method\", \"http.response.status_code\", \"http.response.body.bytes\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 7}, {\"col\": 1, \"panelIndex\": 18, \"row\": 2, \"id\": \"1cfb1a80-a1f4-11e7-928f-5dbe6f6f5519-ecs\", \"size_x\": 12, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 19, \"row\": 1, \"id\": \"97109780-a2a5-11e7-928f-5dbe6f6f5519-ecs\", \"size_x\": 12, \"type\": \"visualization\", \"size_y\": 1}]",
+                "timeRestore": false,
+                "title": "[Filebeat Nginx] Access and error logs ECS",
+                "uiStateJSON": "{}",
+                "version": 1
+            },
+            "id": "046212a0-a2a1-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "dashboard",
+            "version": 2
+        }
+    ],
+    "version": "6.0.0-beta2"
+}

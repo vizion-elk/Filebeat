@@ -1,0 +1,191 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "c4e80aa0-1fd4-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Event Timeline [Filebeat Iptables] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"deny\": \"#E24D42\", \"allow\": \"#64B0C8\"}}}",
+                "version": 1,
+                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"useNormalizedEsInterval\": true, \"interval\": \"auto\", \"time_zone\": \"Europe/Berlin\", \"drop_partials\": false, \"customInterval\": \"2h\", \"extended_bounds\": {}, \"field\": \"@timestamp\", \"timeRange\": {\"from\": \"2019-01-24T15:47:12.171Z\", \"mode\": \"absolute\", \"to\": \"2019-01-24T15:47:52.785Z\"}}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"_key\", \"size\": 5, \"otherBucket\": true, \"order\": \"desc\", \"field\": \"event.outcome\", \"missingBucket\": true, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"Count\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"top\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"show\": \"true\", \"mode\": \"stacked\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\"}]}, \"title\": \"Ubiquiti Firewall Event Timeline [Filebeat Iptables] ECS\"}"
+            },
+            "id": "758b3620-1fda-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T16:37:11.788Z",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "9f7d97c0-1fe9-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Top Blocked IPs [Filebeat Iptables] ECS",
+                "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}",
+                "version": 1,
+                "visState": "{\"type\": \"table\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"bucket\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"source.ip\", \"customLabel\": \"Source IP\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"showTotal\": false, \"totalFunc\": \"sum\", \"perPage\": 10, \"showPartialRows\": false, \"sort\": {\"columnIndex\": null, \"direction\": null}, \"showMetricsAtAllLevels\": false}, \"title\": \"Ubiquiti Firewall Top Blocked IPs [Filebeat Iptables] ECS\"}"
+            },
+            "id": "1ba82fd0-1ff0-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T16:06:20.635Z",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "7862cab0-1fdb-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Allowed Traffic Map [Filebeat Iptables] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"type\": \"tile_map\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"geohash_grid\", \"params\": {\"isFilteredByCollar\": true, \"mapCenter\": [0, 0], \"useGeocentroid\": true, \"precision\": 2, \"autoPrecision\": true, \"field\": \"source.geo.location\", \"mapZoom\": 2}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"wms\": {\"selectedTmsLayer\": {\"attribution\": \"<p>&#169; <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\", \"maxZoom\": 18, \"origin\": \"elastic_maps_service\", \"id\": \"road_map\", \"minZoom\": 0}, \"enabled\": false, \"options\": {\"transparent\": true, \"format\": \"image/png\"}}, \"colorSchema\": \"Yellow to Red\", \"isDesaturated\": true, \"mapCenter\": [0, 0], \"addTooltip\": true, \"legendPosition\": \"bottomright\", \"heatClusterSize\": 1.5, \"mapZoom\": 2, \"mapType\": \"Scaled Circle Markers\"}, \"title\": \"Ubiquiti Firewall Allowed Traffic Map [Filebeat Iptables] ECS\"}"
+            },
+            "id": "5bd53050-1fe9-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T15:04:34.005Z",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "9f7d97c0-1fe9-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Blocked Traffic Map [Filebeat Iptables] ECS",
+                "uiStateJSON": "{\"mapCenter\": [19.228176737766262, -22.851562500000004], \"mapZoom\": 3}",
+                "version": 1,
+                "visState": "{\"type\": \"tile_map\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"geohash_grid\", \"params\": {\"isFilteredByCollar\": true, \"mapCenter\": [0, 0], \"useGeocentroid\": true, \"precision\": 2, \"autoPrecision\": true, \"field\": \"source.geo.location\", \"mapZoom\": 2}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"wms\": {\"selectedTmsLayer\": {\"attribution\": \"<p>&#169; <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\", \"maxZoom\": 18, \"origin\": \"elastic_maps_service\", \"id\": \"road_map\", \"minZoom\": 0}, \"enabled\": false, \"options\": {\"transparent\": true, \"format\": \"image/png\"}}, \"colorSchema\": \"Yellow to Red\", \"isDesaturated\": true, \"mapCenter\": [0, 0], \"addTooltip\": true, \"legendPosition\": \"bottomright\", \"heatClusterSize\": 1.5, \"mapZoom\": 2, \"mapType\": \"Scaled Circle Markers\"}, \"title\": \"Ubiquiti Firewall Blocked Traffic Map [Filebeat Iptables] ECS\"}"
+            },
+            "id": "8853aa20-1fef-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T15:50:31.689Z",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "c4e80aa0-1fd4-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Traffic Breakdown [Filebeat Iptables] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"deny\": \"#E24D42\", \"tcp\": \"#447EBC\", \"ipv4\": \"#65C5DB\", \"udp\": \"#F2C96D\", \"ipv6-icmp\": \"#EA6460\", \"icmp\": \"#F29191\", \"ipv6\": \"#D683CE\"}}}",
+                "version": 1,
+                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": true, \"order\": \"desc\", \"field\": \"event.outcome\", \"missingBucket\": true, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": true, \"order\": \"desc\", \"field\": \"network.type\", \"missingBucket\": true, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"3\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": true, \"order\": \"desc\", \"field\": \"network.transport\", \"missingBucket\": true, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"4\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"top\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": true, \"labels\": {\"last_level\": false, \"truncate\": 100, \"show\": true, \"values\": false}}, \"title\": \"Ubiquiti Firewall Traffic Breakdown [Filebeat Iptables] ECS\"}"
+            },
+            "id": "fdea1ad0-1ff4-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T16:27:50.397Z",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "_source"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"iptables.ubiquiti.rule_set :*\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Ubiquiti Firewall Events [Filebeat Iptables] ECS",
+                "version": 1
+            },
+            "id": "c4e80aa0-1fd4-11e9-ae2a-939083c6a64e-ecs",
+            "type": "search",
+            "updated_at": "2019-01-24T12:37:10.858Z",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "savedSearchId": "c4e80aa0-1fd4-11e9-ae2a-939083c6a64e-ecs",
+                "title": "Ubiquiti Firewall Traffic by Port [Filebeat Iptables] ECS",
+                "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}",
+                "version": 1,
+                "visState": "{\"type\": \"table\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"split\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"row\": false, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"event.outcome\", \"customLabel\": \"event.outcome\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"bucket\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"destination.port\", \"customLabel\": \"Destination port\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"showTotal\": false, \"totalFunc\": \"sum\", \"perPage\": 10, \"showPartialRows\": false, \"sort\": {\"columnIndex\": null, \"direction\": null}, \"showMetricsAtAllLevels\": false}, \"title\": \"Ubiquiti Firewall Traffic by Port [Filebeat Iptables] ECS\"}"
+            },
+            "id": "190bcb50-1ff6-11e9-ae2a-939083c6a64e-ecs",
+            "type": "visualization",
+            "updated_at": "2019-01-24T16:35:45.413Z",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "_source"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"iptables.ubiquiti.rule_set :* and event.outcome : \\\"deny\\\"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Ubiquiti Firewall Blocked Events [Filebeat Iptables] ECS",
+                "version": 1
+            },
+            "id": "9f7d97c0-1fe9-11e9-ae2a-939083c6a64e-ecs",
+            "type": "search",
+            "updated_at": "2019-01-24T15:35:33.942Z",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "_source"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"iptables.ubiquiti.rule_set :* and event.outcome : \\\"allow\\\"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Ubiquiti Firewall Allowed Events [Filebeat Iptables] ECS",
+                "version": 1
+            },
+            "id": "7862cab0-1fdb-11e9-ae2a-939083c6a64e-ecs",
+            "type": "search",
+            "updated_at": "2019-01-24T15:04:12.010Z",
+            "version": 3
+        },
+        {
+            "attributes": {
+                "description": "Overview of the Ubiquiti Firewall iptables events dashboard.",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                },
+                "optionsJSON": "{\"darkTheme\": false, \"useMargins\": true, \"hidePanelTitles\": false}",
+                "panelsJSON": "[{\"embeddableConfig\": {\"vis\": {\"colors\": {\"deny\": \"#E24D42\", \"allow\": \"#64B0C8\"}, \"legendOpen\": true}}, \"panelIndex\": \"1\", \"id\": \"758b3620-1fda-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 33, \"i\": \"1\", \"h\": 15, \"x\": 0, \"y\": 0}, \"type\": \"visualization\", \"title\": \"Event Timeline\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"2\", \"id\": \"1ba82fd0-1ff0-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 15, \"i\": \"2\", \"h\": 15, \"x\": 33, \"y\": 0}, \"type\": \"visualization\", \"title\": \"Top Blocked by source IP\"}, {\"embeddableConfig\": {\"mapCenter\": [39.095962936305476, -22.148437500000004], \"mapZoom\": 2}, \"panelIndex\": \"3\", \"id\": \"5bd53050-1fe9-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 24, \"i\": \"3\", \"h\": 15, \"x\": 0, \"y\": 15}, \"type\": \"visualization\", \"title\": \"Allowed Traffic Map\"}, {\"embeddableConfig\": {\"mapCenter\": [46.31658418182218, -34.10156250000001], \"mapZoom\": 2}, \"panelIndex\": \"4\", \"id\": \"8853aa20-1fef-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 24, \"i\": \"4\", \"h\": 15, \"x\": 24, \"y\": 15}, \"type\": \"visualization\", \"title\": \"Blocked Traffic Map\"}, {\"embeddableConfig\": {\"vis\": {\"colors\": {\"deny\": \"#E24D42\", \"ipv6-icmp\": \"#EA6460\", \"tcp\": \"#447EBC\", \"ipv4\": \"#65C5DB\", \"udp\": \"#F2C96D\", \"allow\": \"#7EB26D\", \"icmp\": \"#F29191\", \"ipv6\": \"#D683CE\"}}}, \"panelIndex\": \"5\", \"id\": \"fdea1ad0-1ff4-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 24, \"i\": \"5\", \"h\": 18, \"x\": 0, \"y\": 30}, \"type\": \"visualization\", \"title\": \"Traffic Breakdown by Protocol\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"6\", \"id\": \"c4e80aa0-1fd4-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 48, \"i\": \"6\", \"h\": 27, \"x\": 0, \"y\": 48}, \"type\": \"search\", \"title\": \"Event View\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"7\", \"id\": \"190bcb50-1ff6-11e9-ae2a-939083c6a64e-ecs\", \"version\": \"6.6.0\", \"gridData\": {\"w\": 24, \"i\": \"7\", \"h\": 18, \"x\": 24, \"y\": 30}, \"type\": \"visualization\", \"title\": \"Traffic Breakdown by Port\"}]",
+                "timeRestore": false,
+                "title": "[Filebeat Iptables] Ubiquiti Firewall Overview ECS",
+                "version": 1
+            },
+            "id": "d39f0980-1ff3-11e9-ae2a-939083c6a64e-ecs",
+            "type": "dashboard",
+            "updated_at": "2019-01-24T16:38:35.174Z",
+            "version": 4
+        }
+    ],
+    "version": "6.6.0"
+}
