@@ -4,13 +4,13 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "savedSearchId": "bfc96a60-0a80-11e8-bffe-ff7d4f68cf94-ecs",
                 "title": "Logs Severity [Filebeat MongoDB] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"log.level\", \"customLabel\": \"Log severity\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"addTooltip\": true, \"addLegend\": true, \"type\": \"pie\", \"legendPosition\": \"right\", \"isDonut\": true}, \"title\": \"Logs Severity [Filebeat MongoDB] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"log.level\", \"customLabel\": \"Log severity\", \"order\": \"desc\", \"size\": 5, \"orderBy\": \"1\"}, \"id\": \"2\", \"type\": \"terms\"}], \"title\": \"Logs Severity [Filebeat MongoDB] ECS\", \"params\": {\"addLegend\": true, \"isDonut\": true, \"type\": \"pie\", \"addTooltip\": true, \"legendPosition\": \"right\"}, \"type\": \"pie\"}"
             },
             "id": "0fef5710-0a82-11e8-bffe-ff7d4f68cf94-ecs",
             "type": "visualization",
@@ -28,7 +28,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"log.level: F or log.level: W\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"log.level: F or log.level: W\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": []}"
                 },
                 "sort": [
                     "@timestamp",
@@ -53,7 +53,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"log.level: *\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"log.level: *\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": []}"
                 },
                 "sort": [
                     "mongodb.log.timestamp",
@@ -71,10 +71,10 @@
                 "description": "Filebeat MongoDB module overview",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": []}"
                 },
                 "optionsJSON": "{\"darkTheme\": false}",
-                "panelsJSON": "[{\"col\": 1, \"panelIndex\": 1, \"row\": 1, \"id\": \"0fef5710-0a82-11e8-bffe-ff7d4f68cf94-ecs\", \"size_x\": 4, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 5, \"panelIndex\": 2, \"row\": 1, \"id\": \"e49fe000-0a7e-11e8-bffe-ff7d4f68cf94-ecs\", \"size_x\": 8, \"columns\": [\"mongodb.log.timestamp\", \"log.level\", \"mongodb.log.component\", \"mongodb.log.context\", \"message\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 3, \"row\": 4, \"id\": \"bfc96a60-0a80-11e8-bffe-ff7d4f68cf94-ecs\", \"size_x\": 12, \"columns\": [\"mongodb.log.timestamp\", \"log.level\", \"mongodb.log.component\", \"mongodb.log.context\", \"message\"], \"type\": \"search\", \"sort\": [\"mongodb.log.timestamp\", \"asc\"], \"size_y\": 6}]",
+                "panelsJSON": "[{\"panelIndex\": 1, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 1, \"size_x\": 4, \"id\": \"0fef5710-0a82-11e8-bffe-ff7d4f68cf94-ecs\"}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"mongodb.log.timestamp\", \"log.level\", \"mongodb.log.component\", \"mongodb.log.context\", \"message\"], \"panelIndex\": 2, \"type\": \"search\", \"size_y\": 3, \"row\": 1, \"col\": 5, \"size_x\": 8, \"id\": \"e49fe000-0a7e-11e8-bffe-ff7d4f68cf94-ecs\"}, {\"sort\": [\"mongodb.log.timestamp\", \"asc\"], \"columns\": [\"mongodb.log.timestamp\", \"log.level\", \"mongodb.log.component\", \"mongodb.log.context\", \"message\"], \"panelIndex\": 3, \"type\": \"search\", \"size_y\": 6, \"row\": 4, \"col\": 1, \"size_x\": 12, \"id\": \"bfc96a60-0a80-11e8-bffe-ff7d4f68cf94-ecs\"}]",
                 "timeRestore": false,
                 "title": "[Filebeat MongoDB] Overview ECS",
                 "uiStateJSON": "{}",

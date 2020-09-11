@@ -8,9 +8,9 @@
                 },
                 "savedSearchId": "ffaf5a30-2413-11e7-a0d9-39604d45ca7f-ecs",
                 "title": "Mainlog Severity [Filebeat Icinga] ECS",
-                "uiStateJSON": "{\"vis\": {\"colors\": {\"critical\": \"#BF1B00\", \"warning\": \"#E5AC0E\"}}}",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"warning\": \"#E5AC0E\", \"critical\": \"#BF1B00\"}}}",
                 "version": 1,
-                "visState": "{\"listeners\": {}, \"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"log.level\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"scale\": \"linear\", \"addTimeMarker\": false, \"setYExtents\": false, \"legendPosition\": \"right\", \"mode\": \"stacked\", \"defaultYExtents\": false, \"addTooltip\": true, \"addLegend\": true, \"times\": []}, \"title\": \"Icinga Mainlog Severity ECS\"}"
+                "visState": "{\"listeners\": {}, \"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"log.level\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Icinga Mainlog Severity ECS\", \"params\": {\"defaultYExtents\": false, \"mode\": \"stacked\", \"times\": [], \"setYExtents\": false, \"legendPosition\": \"right\", \"addLegend\": true, \"addTimeMarker\": false, \"addTooltip\": true, \"scale\": \"linear\"}, \"type\": \"histogram\"}"
             },
             "id": "d8e5dc40-2417-11e7-a83b-d5f4cebac9ff-ecs",
             "type": "visualization",
@@ -26,7 +26,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [{\"query\": {\"match\": {\"event.module\": {\"query\": \"icinga\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"icinga\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"event.module\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"icinga\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}, {\"query\": {\"match\": {\"fileset.name\": {\"query\": \"main\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"main\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"fileset.name\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"main\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [{\"meta\": {\"index\": \"filebeat-*\", \"key\": \"event.module\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"icinga\", \"params\": {\"type\": \"phrase\", \"query\": \"icinga\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"icinga\"}}}}, {\"meta\": {\"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"main\", \"params\": {\"type\": \"phrase\", \"query\": \"main\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"main\"}}}}]}"
                 },
                 "sort": [
                     "@timestamp",
@@ -49,7 +49,7 @@
                 "title": "Mainlog Facility [Filebeat Icinga] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"listeners\": {}, \"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"icinga.main.facility\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"scale\": \"linear\", \"addTimeMarker\": false, \"setYExtents\": false, \"legendPosition\": \"right\", \"mode\": \"stacked\", \"defaultYExtents\": false, \"addTooltip\": true, \"addLegend\": true, \"times\": []}, \"title\": \"Icinga Mainlog Facility ECS\"}"
+                "visState": "{\"listeners\": {}, \"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"icinga.main.facility\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Icinga Mainlog Facility ECS\", \"params\": {\"defaultYExtents\": false, \"mode\": \"stacked\", \"times\": [], \"setYExtents\": false, \"legendPosition\": \"right\", \"addLegend\": true, \"addTimeMarker\": false, \"addTooltip\": true, \"scale\": \"linear\"}, \"type\": \"histogram\"}"
             },
             "id": "2cf77780-2418-11e7-a83b-d5f4cebac9ff-ecs",
             "type": "visualization",
@@ -60,10 +60,10 @@
                 "description": "Filebeat Icinga module dashboard for the main log files",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": []}"
                 },
                 "optionsJSON": "{\"darkTheme\": false}",
-                "panelsJSON": "[{\"col\": 7, \"panelIndex\": 1, \"row\": 1, \"id\": \"d8e5dc40-2417-11e7-a83b-d5f4cebac9ff-ecs\", \"size_x\": 6, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 2, \"row\": 4, \"id\": \"ffaf5a30-2413-11e7-a0d9-39604d45ca7f-ecs\", \"size_x\": 12, \"columns\": [\"icinga.main.facility\", \"log.level\", \"message\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 25}, {\"col\": 1, \"panelIndex\": 3, \"row\": 1, \"id\": \"2cf77780-2418-11e7-a83b-d5f4cebac9ff-ecs\", \"size_x\": 6, \"type\": \"visualization\", \"size_y\": 3}]",
+                "panelsJSON": "[{\"panelIndex\": 1, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 7, \"size_x\": 6, \"id\": \"d8e5dc40-2417-11e7-a83b-d5f4cebac9ff-ecs\"}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"icinga.main.facility\", \"log.level\", \"message\"], \"panelIndex\": 2, \"type\": \"search\", \"size_y\": 25, \"row\": 4, \"col\": 1, \"size_x\": 12, \"id\": \"ffaf5a30-2413-11e7-a0d9-39604d45ca7f-ecs\"}, {\"panelIndex\": 3, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 1, \"size_x\": 6, \"id\": \"2cf77780-2418-11e7-a83b-d5f4cebac9ff-ecs\"}]",
                 "timeRestore": false,
                 "title": "[Filebeat Icinga] Main Log ECS",
                 "uiStateJSON": "{}",

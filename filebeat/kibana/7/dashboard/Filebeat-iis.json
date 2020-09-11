@@ -4,12 +4,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Access map [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"tile_map\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"geohash_grid\", \"params\": {\"isFilteredByCollar\": true, \"precision\": 2, \"autoPrecision\": true, \"field\": \"source.geo.location\", \"useGeocentroid\": true}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"wms\": {\"enabled\": false, \"options\": {\"transparent\": true, \"format\": \"image/png\"}}, \"mapCenter\": [0, 0], \"isDesaturated\": true, \"addTooltip\": true, \"legendPosition\": \"bottomright\", \"heatClusterSize\": 1.5, \"mapZoom\": 2, \"mapType\": \"Scaled Circle Markers\"}, \"title\": \"Access map [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"source.geo.location\", \"autoPrecision\": true, \"useGeocentroid\": true, \"precision\": 2, \"isFilteredByCollar\": true}, \"id\": \"2\", \"type\": \"geohash_grid\"}], \"title\": \"Access map [Filebeat IIS] ECS\", \"params\": {\"legendPosition\": \"bottomright\", \"mapType\": \"Scaled Circle Markers\", \"isDesaturated\": true, \"mapCenter\": [0, 0], \"mapZoom\": 2, \"addTooltip\": true, \"heatClusterSize\": 1.5, \"wms\": {\"enabled\": false, \"options\": {\"format\": \"image/png\", \"transparent\": true}}}, \"type\": \"tile_map\"}"
             },
             "id": "eb2db5b0-fe11-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -20,12 +20,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Response codes over time [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"http.response.status_code\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"Count\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"right\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"show\": \"true\", \"mode\": \"stacked\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\"}]}, \"title\": \"Response codes over time [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"http.response.status_code\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Response codes over time [Filebeat IIS] ECS\", \"params\": {\"legendPosition\": \"right\", \"seriesParams\": [{\"showCircles\": true, \"mode\": \"stacked\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"show\": \"true\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}}], \"times\": [], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"addTimeMarker\": false, \"categoryAxes\": [{\"type\": \"category\", \"title\": {}, \"show\": true, \"style\": {}, \"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"id\": \"CategoryAxis-1\", \"labels\": {\"show\": true, \"truncate\": 100}}], \"addTooltip\": true, \"type\": \"histogram\", \"valueAxes\": [{\"show\": true, \"name\": \"LeftAxis-1\", \"type\": \"value\", \"title\": {\"text\": \"Count\"}, \"position\": \"left\", \"style\": {}, \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"id\": \"ValueAxis-1\", \"labels\": {\"rotate\": 0, \"show\": true, \"truncate\": 100, \"filter\": false}}]}, \"type\": \"histogram\"}"
             },
             "id": "f31414b0-fe14-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -36,12 +36,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Browsers breakdown [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"user_agent.name\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"user_agent.version\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"right\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": true, \"labels\": {\"last_level\": true, \"truncate\": 100, \"show\": false, \"values\": true}}, \"title\": \"Browsers breakdown [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"user_agent.name\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"2\", \"type\": \"terms\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"user_agent.version\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Browsers breakdown [Filebeat IIS] ECS\", \"params\": {\"isDonut\": true, \"legendPosition\": \"right\", \"addLegend\": true, \"type\": \"pie\", \"addTooltip\": true, \"labels\": {\"show\": false, \"values\": true, \"truncate\": 100, \"last_level\": true}}, \"type\": \"pie\"}"
             },
             "id": "63129c80-fe12-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -52,12 +52,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Operating systems breakdown [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"user_agent.os.name\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"user_agent.os.version\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"right\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": true, \"labels\": {\"last_level\": true, \"truncate\": 100, \"show\": false, \"values\": true}}, \"title\": \"Operating systems breakdown [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"user_agent.os.name\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"2\", \"type\": \"terms\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"user_agent.os.version\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Operating systems breakdown [Filebeat IIS] ECS\", \"params\": {\"isDonut\": true, \"legendPosition\": \"right\", \"addLegend\": true, \"type\": \"pie\", \"addTooltip\": true, \"labels\": {\"show\": false, \"values\": true, \"truncate\": 100, \"last_level\": true}}, \"type\": \"pie\"}"
             },
             "id": "ccd3f9c0-fe12-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -68,12 +68,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Error logs over time [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"http.response.status_code\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"Count\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"right\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"show\": \"true\", \"mode\": \"stacked\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\"}]}, \"title\": \"Error logs over time [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"http.response.status_code\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Error logs over time [Filebeat IIS] ECS\", \"params\": {\"legendPosition\": \"right\", \"seriesParams\": [{\"showCircles\": true, \"mode\": \"stacked\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"show\": \"true\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}}], \"times\": [], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"addTimeMarker\": false, \"categoryAxes\": [{\"type\": \"category\", \"title\": {}, \"show\": true, \"style\": {}, \"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"id\": \"CategoryAxis-1\", \"labels\": {\"show\": true, \"truncate\": 100}}], \"addTooltip\": true, \"type\": \"histogram\", \"valueAxes\": [{\"show\": true, \"name\": \"LeftAxis-1\", \"type\": \"value\", \"title\": {\"text\": \"Count\"}, \"position\": \"left\", \"style\": {}, \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"id\": \"ValueAxis-1\", \"labels\": {\"rotate\": 0, \"show\": true, \"truncate\": 100, \"filter\": false}}]}, \"type\": \"histogram\"}"
             },
             "id": "41f38230-fe17-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -84,12 +84,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Top URLs by response code [Filebeat IIS] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"split\", \"type\": \"terms\", \"params\": {\"orderBy\": \"1\", \"size\": 5, \"row\": false, \"order\": \"desc\", \"field\": \"url.path\", \"customLabel\": \"URL\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"http.response.status_code\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"right\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": false, \"labels\": {\"last_level\": true, \"truncate\": 100, \"show\": false, \"values\": true}}, \"title\": \"Top URLs by response code [Filebeat IIS] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"split\", \"params\": {\"field\": \"url.path\", \"orderBy\": \"1\", \"size\": 5, \"order\": \"desc\", \"customLabel\": \"URL\", \"row\": false}, \"id\": \"2\", \"type\": \"terms\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"http.response.status_code\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Top URLs by response code [Filebeat IIS] ECS\", \"params\": {\"isDonut\": false, \"legendPosition\": \"right\", \"addLegend\": true, \"type\": \"pie\", \"addTooltip\": true, \"labels\": {\"show\": false, \"values\": true, \"truncate\": 100, \"last_level\": true}}, \"type\": \"pie\"}"
             },
             "id": "c0d02cd0-fe1b-11e7-a3b0-d13028918f9f-ecs",
             "type": "visualization",
@@ -101,10 +101,10 @@
                 "description": "Dashboard for the Filebeat IIS module",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": []}"
                 },
-                "optionsJSON": "{\"darkTheme\": false, \"useMargins\": true, \"hidePanelTitles\": false}",
-                "panelsJSON": "[{\"gridData\": {\"w\": 12, \"i\": \"1\", \"h\": 3, \"x\": 0, \"y\": 0}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"1\", \"id\": \"eb2db5b0-fe11-11e7-a3b0-d13028918f9f-ecs\"}, {\"gridData\": {\"w\": 7, \"i\": \"2\", \"h\": 3, \"x\": 0, \"y\": 3}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"2\", \"id\": \"f31414b0-fe14-11e7-a3b0-d13028918f9f-ecs\"}, {\"gridData\": {\"w\": 6, \"i\": \"4\", \"h\": 3, \"x\": 0, \"y\": 9}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"4\", \"id\": \"63129c80-fe12-11e7-a3b0-d13028918f9f-ecs\"}, {\"gridData\": {\"w\": 6, \"i\": \"5\", \"h\": 3, \"x\": 6, \"y\": 9}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"5\", \"id\": \"ccd3f9c0-fe12-11e7-a3b0-d13028918f9f-ecs\"}, {\"gridData\": {\"w\": 5, \"i\": \"6\", \"h\": 3, \"x\": 7, \"y\": 3}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"6\", \"id\": \"41f38230-fe17-11e7-a3b0-d13028918f9f-ecs\"}, {\"gridData\": {\"w\": 12, \"i\": \"7\", \"h\": 3, \"x\": 0, \"y\": 6}, \"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"7\", \"id\": \"c0d02cd0-fe1b-11e7-a3b0-d13028918f9f-ecs\"}]",
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true, \"darkTheme\": false}",
+                "panelsJSON": "[{\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"1\", \"id\": \"eb2db5b0-fe11-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"1\", \"x\": 0, \"y\": 0, \"w\": 12}}, {\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"2\", \"id\": \"f31414b0-fe14-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"2\", \"x\": 0, \"y\": 3, \"w\": 7}}, {\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"4\", \"id\": \"63129c80-fe12-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"4\", \"x\": 0, \"y\": 9, \"w\": 6}}, {\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"5\", \"id\": \"ccd3f9c0-fe12-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"5\", \"x\": 6, \"y\": 9, \"w\": 6}}, {\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"6\", \"id\": \"41f38230-fe17-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"6\", \"x\": 7, \"y\": 3, \"w\": 5}}, {\"version\": \"6.1.2\", \"type\": \"visualization\", \"panelIndex\": \"7\", \"id\": \"c0d02cd0-fe1b-11e7-a3b0-d13028918f9f-ecs\", \"gridData\": {\"h\": 3, \"i\": \"7\", \"x\": 0, \"y\": 6, \"w\": 12}}]",
                 "timeRestore": false,
                 "title": "[Filebeat IIS] Access and error logs ECS",
                 "uiStateJSON": "{}",

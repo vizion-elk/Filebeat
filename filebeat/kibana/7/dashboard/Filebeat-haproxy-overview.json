@@ -4,12 +4,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Backend breakdown [Filebeat HAProxy] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"haproxy.backend_name\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"right\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": true, \"labels\": {\"last_level\": true, \"truncate\": 100, \"show\": false, \"values\": true}}, \"title\": \"Backend breakdown [Filebeat HAProxy] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"haproxy.backend_name\", \"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"order\": \"desc\", \"otherBucket\": false, \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"id\": \"2\", \"type\": \"terms\"}], \"title\": \"Backend breakdown [Filebeat HAProxy] ECS\", \"params\": {\"isDonut\": true, \"legendPosition\": \"right\", \"addLegend\": true, \"type\": \"pie\", \"addTooltip\": true, \"labels\": {\"show\": false, \"values\": true, \"truncate\": 100, \"last_level\": true}}, \"type\": \"pie\"}"
             },
             "id": "55251360-aa32-11e8-9c06-877f0445e3e0-ecs",
             "type": "visualization",
@@ -20,12 +20,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Frontend breakdown [Filebeat HAProxy] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"haproxy.frontend_name\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"type\": \"pie\", \"legendPosition\": \"right\", \"addTooltip\": true, \"addLegend\": true, \"isDonut\": true, \"labels\": {\"last_level\": true, \"truncate\": 100, \"show\": false, \"values\": true}}, \"title\": \"Frontend breakdown [Filebeat HAProxy] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"haproxy.frontend_name\", \"otherBucketLabel\": \"Other\", \"orderBy\": \"1\", \"size\": 5, \"order\": \"desc\", \"otherBucket\": false, \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"id\": \"2\", \"type\": \"terms\"}], \"title\": \"Frontend breakdown [Filebeat HAProxy] ECS\", \"params\": {\"isDonut\": true, \"legendPosition\": \"right\", \"addLegend\": true, \"type\": \"pie\", \"addTooltip\": true, \"labels\": {\"show\": false, \"values\": true, \"truncate\": 100, \"last_level\": true}}, \"type\": \"pie\"}"
             },
             "id": "7fb671f0-aa32-11e8-9c06-877f0445e3e0-ecs",
             "type": "visualization",
@@ -36,12 +36,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "IP Geohashes [Filebeat HAProxy] ECS",
                 "uiStateJSON": "{\"mapCenter\": [14.944784875088372, 5.09765625]}",
                 "version": 1,
-                "visState": "{\"type\": \"tile_map\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"cardinality\", \"params\": {\"field\": \"source.address\"}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"geohash_grid\", \"params\": {\"isFilteredByCollar\": true, \"precision\": 2, \"autoPrecision\": true, \"field\": \"source.geo.location\", \"useGeocentroid\": true}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"wms\": {\"url\": \"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\", \"enabled\": false, \"options\": {\"attribution\": \"Maps provided by USGS\", \"version\": \"1.3.0\", \"transparent\": true, \"format\": \"image/png\", \"styles\": \"\", \"layers\": \"0\"}}, \"heatMaxZoom\": 16, \"heatBlur\": 15, \"isDesaturated\": true, \"addTooltip\": true, \"heatMinOpacity\": 0.1, \"heatRadius\": 25, \"mapCenter\": [15, 5], \"legendPosition\": \"bottomright\", \"heatNormalizeData\": true, \"mapZoom\": 2, \"mapType\": \"Scaled Circle Markers\"}, \"title\": \"IP Geohashes [Filebeat HAProxy] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {\"field\": \"source.address\"}, \"id\": \"1\", \"type\": \"cardinality\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"source.geo.location\", \"autoPrecision\": true, \"useGeocentroid\": true, \"precision\": 2, \"isFilteredByCollar\": true}, \"id\": \"2\", \"type\": \"geohash_grid\"}], \"title\": \"IP Geohashes [Filebeat HAProxy] ECS\", \"params\": {\"heatRadius\": 25, \"legendPosition\": \"bottomright\", \"mapZoom\": 2, \"heatMinOpacity\": 0.1, \"heatMaxZoom\": 16, \"mapType\": \"Scaled Circle Markers\", \"isDesaturated\": true, \"mapCenter\": [15, 5], \"heatBlur\": 15, \"addTooltip\": true, \"wms\": {\"enabled\": false, \"options\": {\"attribution\": \"Maps provided by USGS\", \"transparent\": true, \"version\": \"1.3.0\", \"styles\": \"\", \"format\": \"image/png\", \"layers\": \"0\"}, \"url\": \"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\"}, \"heatNormalizeData\": true}, \"type\": \"tile_map\"}"
             },
             "id": "11f8b9c0-aa32-11e8-9c06-877f0445e3e0-ecs",
             "type": "visualization",
@@ -52,12 +52,12 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": [], \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "title": "Response codes over time [Filebeat HAProxy] ECS",
-                "uiStateJSON": "{\"vis\": {\"colors\": {\"200\": \"#508642\", \"503\": \"#705DA0\", \"302\": \"#6ED0E0\", \"204\": \"#629E51\", \"404\": \"#EAB839\"}}}",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"503\": \"#705DA0\", \"204\": \"#629E51\", \"302\": \"#6ED0E0\", \"200\": \"#508642\", \"404\": \"#EAB839\"}}}",
                 "version": 1,
-                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"otherBucketLabel\": \"Other\", \"orderBy\": \"_term\", \"size\": 5, \"otherBucket\": false, \"order\": \"desc\", \"field\": \"http.response.status_code\", \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"Count\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"right\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"show\": \"true\", \"mode\": \"stacked\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\"}]}, \"title\": \"Response codes over time [Filebeat HAProxy] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"http.response.status_code\", \"otherBucketLabel\": \"Other\", \"orderBy\": \"_term\", \"size\": 5, \"order\": \"desc\", \"otherBucket\": false, \"missingBucket\": false, \"missingBucketLabel\": \"Missing\"}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"Response codes over time [Filebeat HAProxy] ECS\", \"params\": {\"legendPosition\": \"right\", \"seriesParams\": [{\"showCircles\": true, \"mode\": \"stacked\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"show\": \"true\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}}], \"times\": [], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"addTimeMarker\": false, \"categoryAxes\": [{\"type\": \"category\", \"title\": {}, \"show\": true, \"style\": {}, \"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"id\": \"CategoryAxis-1\", \"labels\": {\"show\": true, \"truncate\": 100}}], \"addTooltip\": true, \"type\": \"histogram\", \"valueAxes\": [{\"show\": true, \"name\": \"LeftAxis-1\", \"type\": \"value\", \"title\": {\"text\": \"Count\"}, \"position\": \"left\", \"style\": {}, \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"id\": \"ValueAxis-1\", \"labels\": {\"rotate\": 0, \"show\": true, \"truncate\": 100, \"filter\": false}}]}, \"type\": \"histogram\"}"
             },
             "id": "68af8ef0-aa33-11e8-9c06-877f0445e3e0-ecs",
             "type": "visualization",
@@ -69,10 +69,10 @@
                 "description": "Filebeat HAProxy module dashboard",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
-                "optionsJSON": "{\"darkTheme\": false, \"useMargins\": true, \"hidePanelTitles\": false}",
-                "panelsJSON": "[{\"embeddableConfig\": {}, \"panelIndex\": \"1\", \"id\": \"55251360-aa32-11e8-9c06-877f0445e3e0-ecs\", \"version\": \"6.5.2\", \"gridData\": {\"w\": 24, \"i\": \"1\", \"h\": 15, \"x\": 0, \"y\": 0}, \"type\": \"visualization\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"2\", \"id\": \"7fb671f0-aa32-11e8-9c06-877f0445e3e0-ecs\", \"version\": \"6.5.2\", \"gridData\": {\"w\": 24, \"i\": \"2\", \"h\": 15, \"x\": 24, \"y\": 0}, \"type\": \"visualization\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"3\", \"id\": \"11f8b9c0-aa32-11e8-9c06-877f0445e3e0-ecs\", \"version\": \"6.5.2\", \"gridData\": {\"w\": 24, \"i\": \"3\", \"h\": 15, \"x\": 0, \"y\": 15}, \"type\": \"visualization\"}, {\"embeddableConfig\": {}, \"panelIndex\": \"4\", \"id\": \"68af8ef0-aa33-11e8-9c06-877f0445e3e0-ecs\", \"version\": \"6.5.2\", \"gridData\": {\"w\": 24, \"i\": \"4\", \"h\": 15, \"x\": 24, \"y\": 15}, \"type\": \"visualization\"}]",
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true, \"darkTheme\": false}",
+                "panelsJSON": "[{\"panelIndex\": \"1\", \"version\": \"6.5.2\", \"type\": \"visualization\", \"embeddableConfig\": {}, \"gridData\": {\"h\": 15, \"i\": \"1\", \"x\": 0, \"y\": 0, \"w\": 24}, \"id\": \"55251360-aa32-11e8-9c06-877f0445e3e0-ecs\"}, {\"panelIndex\": \"2\", \"version\": \"6.5.2\", \"type\": \"visualization\", \"embeddableConfig\": {}, \"gridData\": {\"h\": 15, \"i\": \"2\", \"x\": 24, \"y\": 0, \"w\": 24}, \"id\": \"7fb671f0-aa32-11e8-9c06-877f0445e3e0-ecs\"}, {\"panelIndex\": \"3\", \"version\": \"6.5.2\", \"type\": \"visualization\", \"embeddableConfig\": {}, \"gridData\": {\"h\": 15, \"i\": \"3\", \"x\": 0, \"y\": 15, \"w\": 24}, \"id\": \"11f8b9c0-aa32-11e8-9c06-877f0445e3e0-ecs\"}, {\"panelIndex\": \"4\", \"version\": \"6.5.2\", \"type\": \"visualization\", \"embeddableConfig\": {}, \"gridData\": {\"h\": 15, \"i\": \"4\", \"x\": 24, \"y\": 15, \"w\": 24}, \"id\": \"68af8ef0-aa33-11e8-9c06-877f0445e3e0-ecs\"}]",
                 "timeRestore": false,
                 "title": "[Filebeat HAProxy] Overview ECS",
                 "version": 1

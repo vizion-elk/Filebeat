@@ -13,7 +13,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [{\"query\": {\"match\": {\"event.module\": {\"query\": \"logstash\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"logstash\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"event.module\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"logstash\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}, {\"query\": {\"match\": {\"fileset.name\": {\"query\": \"slowlog\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"slowlog\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"fileset.name\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"slowlog\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [{\"meta\": {\"index\": \"filebeat-*\", \"key\": \"event.module\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"logstash\", \"params\": {\"type\": \"phrase\", \"query\": \"logstash\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"logstash\"}}}}, {\"meta\": {\"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"slowlog\", \"params\": {\"type\": \"phrase\", \"query\": \"slowlog\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"slowlog\"}}}}]}"
                 },
                 "sort": [
                     "log.level",
@@ -30,13 +30,13 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "savedSearchId": "cfaba090-cbda-11e7-9852-73e0a9df1bb6-ecs",
                 "title": "Logs Severity [Filebeat Logstash] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"pie\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"log.level\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"addTooltip\": true, \"addLegend\": true, \"type\": \"pie\", \"legendPosition\": \"right\", \"isDonut\": true}, \"title\": \"Logs Severity [Filebeat Logstash] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"log.level\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"2\", \"type\": \"terms\"}], \"title\": \"Logs Severity [Filebeat Logstash] ECS\", \"params\": {\"addLegend\": true, \"isDonut\": true, \"type\": \"pie\", \"addTooltip\": true, \"legendPosition\": \"right\"}, \"type\": \"pie\"}"
             },
             "id": "0b1dace0-cbdb-11e7-9852-73e0a9df1bb6-ecs",
             "type": "visualization",
@@ -46,13 +46,13 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "savedSearchId": "cfaba090-cbda-11e7-9852-73e0a9df1bb6-ecs",
                 "title": "logs over time [Filebeat Logstash] ECS",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"count\", \"params\": {}, \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"1\", \"field\": \"log.level\"}, \"enabled\": true, \"id\": \"3\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"Count\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"right\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"show\": \"true\", \"mode\": \"stacked\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\"}]}, \"title\": \"logs over time [Filebeat Logstash] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {}, \"id\": \"1\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"2\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"group\", \"params\": {\"field\": \"log.level\", \"order\": \"desc\", \"orderBy\": \"1\", \"size\": 5}, \"id\": \"3\", \"type\": \"terms\"}], \"title\": \"logs over time [Filebeat Logstash] ECS\", \"params\": {\"legendPosition\": \"right\", \"seriesParams\": [{\"showCircles\": true, \"mode\": \"stacked\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"show\": \"true\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}}], \"times\": [], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"addTimeMarker\": false, \"categoryAxes\": [{\"type\": \"category\", \"title\": {}, \"show\": true, \"style\": {}, \"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"id\": \"CategoryAxis-1\", \"labels\": {\"show\": true, \"truncate\": 100}}], \"addTooltip\": true, \"type\": \"histogram\", \"valueAxes\": [{\"show\": true, \"name\": \"LeftAxis-1\", \"type\": \"value\", \"title\": {\"text\": \"Count\"}, \"position\": \"left\", \"style\": {}, \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"id\": \"ValueAxis-1\", \"labels\": {\"rotate\": 0, \"show\": true, \"truncate\": 100, \"filter\": false}}]}, \"type\": \"histogram\"}"
             },
             "id": "e90b7240-cbda-11e7-9852-73e0a9df1bb6-ecs",
             "type": "visualization",
@@ -62,13 +62,13 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "savedSearchId": "742e45d0-cbdd-11e7-9852-73e0a9df1bb6-ecs",
                 "title": "Slowest plugins [Filebeat Logstash] ECS",
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 3, \"direction\": null}}}}",
                 "version": 1,
-                "visState": "{\"type\": \"table\", \"aggs\": [{\"schema\": \"metric\", \"type\": \"avg\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Average\"}, \"enabled\": true, \"id\": \"6\"}, {\"schema\": \"metric\", \"type\": \"min\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Min\"}, \"enabled\": true, \"id\": \"5\"}, {\"schema\": \"bucket\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"5\", \"field\": \"logstash.slowlog.plugin_name\", \"customLabel\": \"Plugin Name\"}, \"enabled\": true, \"id\": \"8\"}, {\"schema\": \"metric\", \"type\": \"max\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Max\"}, \"enabled\": true, \"id\": \"7\"}, {\"schema\": \"bucket\", \"type\": \"terms\", \"params\": {\"size\": 5, \"order\": \"desc\", \"orderBy\": \"5\", \"field\": \"logstash.slowlog.plugin_type\", \"customLabel\": \"Plugin Type\"}, \"enabled\": true, \"id\": \"9\"}], \"params\": {\"showTotal\": false, \"totalFunc\": \"sum\", \"perPage\": 10, \"showPartialRows\": false, \"showMeticsAtAllLevels\": false, \"sort\": {\"columnIndex\": null, \"direction\": null}}, \"title\": \"Slowest plugins [Filebeat Logstash] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"metric\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Average\"}, \"id\": \"6\", \"type\": \"avg\"}, {\"enabled\": true, \"schema\": \"metric\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Min\"}, \"id\": \"5\", \"type\": \"min\"}, {\"enabled\": true, \"schema\": \"bucket\", \"params\": {\"field\": \"logstash.slowlog.plugin_name\", \"customLabel\": \"Plugin Name\", \"order\": \"desc\", \"size\": 5, \"orderBy\": \"5\"}, \"id\": \"8\", \"type\": \"terms\"}, {\"enabled\": true, \"schema\": \"metric\", \"params\": {\"field\": \"logstash.slowlog.took_in_millis\", \"customLabel\": \"Max\"}, \"id\": \"7\", \"type\": \"max\"}, {\"enabled\": true, \"schema\": \"bucket\", \"params\": {\"field\": \"logstash.slowlog.plugin_type\", \"customLabel\": \"Plugin Type\", \"order\": \"desc\", \"size\": 5, \"orderBy\": \"5\"}, \"id\": \"9\", \"type\": \"terms\"}], \"title\": \"Slowest plugins [Filebeat Logstash] ECS\", \"params\": {\"perPage\": 10, \"showTotal\": false, \"showMeticsAtAllLevels\": false, \"sort\": {\"columnIndex\": null, \"direction\": null}, \"totalFunc\": \"sum\", \"showPartialRows\": false}, \"type\": \"table\"}"
             },
             "id": "b3315630-cbdf-11e7-9852-73e0a9df1bb6-ecs",
             "type": "visualization",
@@ -85,7 +85,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [{\"query\": {\"match\": {\"event.module\": {\"query\": \"logstash\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"logstash\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"event.module\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"logstash\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}, {\"query\": {\"match\": {\"fileset.name\": {\"query\": \"log\", \"type\": \"phrase\"}}}, \"meta\": {\"value\": \"log\", \"type\": \"phrase\", \"disabled\": false, \"key\": \"fileset.name\", \"alias\": null, \"index\": \"filebeat-*\", \"negate\": false, \"params\": {\"query\": \"log\", \"type\": \"phrase\"}}, \"$state\": {\"store\": \"appState\"}}], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [{\"meta\": {\"index\": \"filebeat-*\", \"key\": \"event.module\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"logstash\", \"params\": {\"type\": \"phrase\", \"query\": \"logstash\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"logstash\"}}}}, {\"meta\": {\"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"type\": \"phrase\", \"negate\": false, \"alias\": null, \"disabled\": false, \"value\": \"log\", \"params\": {\"type\": \"phrase\", \"query\": \"log\"}}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"log\"}}}}]}"
                 },
                 "sort": [
                     "@timestamp",
@@ -103,10 +103,10 @@
                 "description": "Overview of Logstash Slowlogs",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": []}"
                 },
                 "optionsJSON": "{\"darkTheme\": false}",
-                "panelsJSON": "[{\"col\": 1, \"panelIndex\": 1, \"row\": 7, \"id\": \"742e45d0-cbdd-11e7-9852-73e0a9df1bb6-ecs\", \"size_x\": 12, \"columns\": [\"log.level\", \"logstash.slowlog.plugin_type\", \"logstash.slowlog.plugin_name\", \"logstash.slowlog.message\", \"logstash.slowlog.plugin_params\", \"logstash.slowlog.execution_time_ns\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 9}, {\"col\": 7, \"panelIndex\": 2, \"row\": 1, \"id\": \"0b1dace0-cbdb-11e7-9852-73e0a9df1bb6-ecs\", \"size_x\": 6, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 3, \"row\": 1, \"id\": \"e90b7240-cbda-11e7-9852-73e0a9df1bb6-ecs\", \"size_x\": 6, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 4, \"row\": 4, \"id\": \"b3315630-cbdf-11e7-9852-73e0a9df1bb6-ecs\", \"size_x\": 12, \"type\": \"visualization\", \"size_y\": 3}]",
+                "panelsJSON": "[{\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"log.level\", \"logstash.slowlog.plugin_type\", \"logstash.slowlog.plugin_name\", \"logstash.slowlog.message\", \"logstash.slowlog.plugin_params\", \"logstash.slowlog.execution_time_ns\"], \"panelIndex\": 1, \"type\": \"search\", \"size_y\": 9, \"row\": 7, \"col\": 1, \"size_x\": 12, \"id\": \"742e45d0-cbdd-11e7-9852-73e0a9df1bb6-ecs\"}, {\"panelIndex\": 2, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 7, \"size_x\": 6, \"id\": \"0b1dace0-cbdb-11e7-9852-73e0a9df1bb6-ecs\"}, {\"panelIndex\": 3, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 1, \"size_x\": 6, \"id\": \"e90b7240-cbda-11e7-9852-73e0a9df1bb6-ecs\"}, {\"panelIndex\": 4, \"type\": \"visualization\", \"size_y\": 3, \"row\": 4, \"col\": 1, \"size_x\": 12, \"id\": \"b3315630-cbdf-11e7-9852-73e0a9df1bb6-ecs\"}]",
                 "timeRestore": false,
                 "title": "[Filebeat Logstash] Slowlogs ECS",
                 "uiStateJSON": "{\"P-4\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 3, \"direction\": null}}}}}",

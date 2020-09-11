@@ -4,13 +4,13 @@
             "attributes": {
                 "description": "",
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"kuery\"}, \"filter\": []}"
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"filter\": []}"
                 },
                 "savedSearchId": "PostgreSQL Query Durations-ecs",
                 "title": "Query count and cumulated duration [Filebeat PostgreSQL] ECS",
-                "uiStateJSON": "{\"vis\": {\"colors\": {\"Number of queries\": \"#0A437C\", \"Sum of query duration\": \"#6ED0E0\"}, \"legendOpen\": true}}",
+                "uiStateJSON": "{\"vis\": {\"legendOpen\": true, \"colors\": {\"Number of queries\": \"#0A437C\", \"Sum of query duration\": \"#6ED0E0\"}}}",
                 "version": 1,
-                "visState": "{\"type\": \"histogram\", \"aggs\": [{\"schema\": \"segment\", \"type\": \"date_histogram\", \"params\": {\"min_doc_count\": 1, \"field\": \"@timestamp\", \"interval\": \"auto\", \"extended_bounds\": {}, \"customInterval\": \"2h\"}, \"enabled\": true, \"id\": \"3\"}, {\"schema\": \"metric\", \"type\": \"count\", \"params\": {\"customLabel\": \"Number of queries\"}, \"enabled\": true, \"id\": \"4\"}, {\"schema\": \"metric\", \"type\": \"sum\", \"params\": {\"field\": \"event.duration\", \"customLabel\": \"Sum of query duration\"}, \"enabled\": true, \"id\": \"2\"}], \"params\": {\"valueAxes\": [{\"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"type\": \"value\", \"name\": \"LeftAxis-1\", \"position\": \"left\", \"id\": \"ValueAxis-1\", \"style\": {}, \"title\": {\"text\": \"\"}, \"show\": true, \"labels\": {\"truncate\": 100, \"filter\": false, \"show\": true, \"rotate\": 0}}], \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"addTimeMarker\": false, \"type\": \"histogram\", \"legendPosition\": \"right\", \"categoryAxes\": [{\"scale\": {\"type\": \"linear\"}, \"type\": \"category\", \"id\": \"CategoryAxis-1\", \"position\": \"bottom\", \"show\": true, \"style\": {}, \"title\": {\"text\": \"@timestamp per 3 hours\"}, \"labels\": {\"truncate\": 100, \"show\": true}}], \"addTooltip\": true, \"addLegend\": true, \"times\": [], \"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"interpolate\": \"linear\", \"data\": {\"label\": \"Number of queries\", \"id\": \"4\"}, \"show\": true, \"mode\": \"normal\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\", \"lineWidth\": 2}, {\"drawLinesBetweenPoints\": true, \"interpolate\": \"linear\", \"data\": {\"label\": \"Sum of query duration\", \"id\": \"2\"}, \"show\": true, \"mode\": \"normal\", \"showCircles\": true, \"type\": \"histogram\", \"valueAxis\": \"ValueAxis-1\", \"lineWidth\": 2}]}, \"title\": \"Query count and cumulated duration [Filebeat PostgreSQL] ECS\"}"
+                "visState": "{\"aggs\": [{\"enabled\": true, \"schema\": \"segment\", \"params\": {\"field\": \"@timestamp\", \"extended_bounds\": {}, \"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1}, \"id\": \"3\", \"type\": \"date_histogram\"}, {\"enabled\": true, \"schema\": \"metric\", \"params\": {\"customLabel\": \"Number of queries\"}, \"id\": \"4\", \"type\": \"count\"}, {\"enabled\": true, \"schema\": \"metric\", \"params\": {\"field\": \"event.duration\", \"customLabel\": \"Sum of query duration\"}, \"id\": \"2\", \"type\": \"sum\"}], \"title\": \"Query count and cumulated duration [Filebeat PostgreSQL] ECS\", \"params\": {\"legendPosition\": \"right\", \"seriesParams\": [{\"showCircles\": true, \"mode\": \"normal\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"lineWidth\": 2, \"show\": true, \"interpolate\": \"linear\", \"data\": {\"label\": \"Number of queries\", \"id\": \"4\"}}, {\"showCircles\": true, \"mode\": \"normal\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"histogram\", \"lineWidth\": 2, \"show\": true, \"interpolate\": \"linear\", \"data\": {\"label\": \"Sum of query duration\", \"id\": \"2\"}}], \"times\": [], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"addTimeMarker\": false, \"categoryAxes\": [{\"type\": \"category\", \"title\": {\"text\": \"@timestamp per 3 hours\"}, \"show\": true, \"style\": {}, \"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"id\": \"CategoryAxis-1\", \"labels\": {\"show\": true, \"truncate\": 100}}], \"addTooltip\": true, \"type\": \"histogram\", \"valueAxes\": [{\"show\": true, \"name\": \"LeftAxis-1\", \"type\": \"value\", \"title\": {\"text\": \"\"}, \"position\": \"left\", \"style\": {}, \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"id\": \"ValueAxis-1\", \"labels\": {\"rotate\": 0, \"show\": true, \"truncate\": 100, \"filter\": false}}]}, \"type\": \"histogram\"}"
             },
             "id": "PostgreSQL Query Count and Duration-ecs",
             "type": "visualization",
@@ -27,7 +27,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"event.duration>30000000\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"event.duration>30000000\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": []}"
                 },
                 "sort": [
                     "@timestamp",
@@ -51,7 +51,7 @@
                 "description": "",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"event.duration:*\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true, \"index\": \"filebeat-*\"}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"event.duration:*\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": []}"
                 },
                 "sort": [
                     "@timestamp",
@@ -69,10 +69,10 @@
                 "description": "Dashboard for analyzing the query durations of the Filebeat PostgreSQL module",
                 "hits": 0,
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"query\": {\"query\": \"postgresql.log.query:*\", \"language\": \"kuery\"}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                    "searchSourceJSON": "{\"highlightAll\": true, \"query\": {\"language\": \"kuery\", \"query\": \"postgresql.log.query:*\"}, \"version\": true, \"filter\": []}"
                 },
                 "optionsJSON": "{\"darkTheme\": false}",
-                "panelsJSON": "[{\"col\": 1, \"panelIndex\": 1, \"row\": 1, \"id\": \"PostgreSQL Query Count and Duration-ecs\", \"size_x\": 6, \"type\": \"visualization\", \"size_y\": 3}, {\"col\": 7, \"panelIndex\": 2, \"row\": 1, \"id\": \"Slow PostgreSQL Queries-ecs\", \"size_x\": 6, \"columns\": [\"user.name\", \"postgresql.log.database\", \"event.duration\", \"postgresql.log.query\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 3}, {\"col\": 1, \"panelIndex\": 3, \"row\": 4, \"id\": \"PostgreSQL Query Durations-ecs\", \"size_x\": 12, \"columns\": [\"user.name\", \"postgresql.log.database\", \"event.duration\", \"postgresql.log.query\"], \"type\": \"search\", \"sort\": [\"@timestamp\", \"desc\"], \"size_y\": 5}]",
+                "panelsJSON": "[{\"panelIndex\": 1, \"type\": \"visualization\", \"size_y\": 3, \"row\": 1, \"col\": 1, \"size_x\": 6, \"id\": \"PostgreSQL Query Count and Duration-ecs\"}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"user.name\", \"postgresql.log.database\", \"event.duration\", \"postgresql.log.query\"], \"panelIndex\": 2, \"type\": \"search\", \"size_y\": 3, \"row\": 1, \"col\": 7, \"size_x\": 6, \"id\": \"Slow PostgreSQL Queries-ecs\"}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"user.name\", \"postgresql.log.database\", \"event.duration\", \"postgresql.log.query\"], \"panelIndex\": 3, \"type\": \"search\", \"size_y\": 5, \"row\": 4, \"col\": 1, \"size_x\": 12, \"id\": \"PostgreSQL Query Durations-ecs\"}]",
                 "timeRestore": false,
                 "title": "[Filebeat PostgreSQL] Query Duration Overview ECS",
                 "uiStateJSON": "{}",
