@@ -2,7 +2,7 @@
 
 filebeat.inputs:
 - type: log
-  enabled: false
+  enabled: true
   paths:
     - /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
@@ -14,7 +14,7 @@ filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
 
   # Set to true to enable config reloading
-  reload.enabled: false
+  reload.enabled: true
 
   # Period on which files under path should be checked for changes
   #reload.period: 10s
@@ -92,7 +92,7 @@ processors:
 # reporting is disabled by default.
 
 # Set to true to enable the monitoring reporter.
-#monitoring.enabled: false
+#monitoring.enabled: true
 
 # Sets the UUID of the Elasticsearch cluster under which monitoring data for this
 # Filebeat instance will appear in the Stack Monitoring UI. If output.elasticsearch

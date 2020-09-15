@@ -175,10 +175,10 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     $fileContent | Set-Content filebeat.yml
 
 
-    #Enables the filebeat input
-    (Get-Content filebeat.yml) |       
-        ForEach-Object {$_ -Replace "false", "true" } |
-            Set-Content filebeat.yml
+    #Enables the filebeat input--manual handle
+    # (Get-Content filebeat.yml) |       
+    #     ForEach-Object {$_ -Replace "false", "true" } |
+    #         Set-Content filebeat.yml
 
     # #============ Filebeat Modules Dropdown =============#
 
