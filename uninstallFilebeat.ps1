@@ -8,7 +8,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     Set-ExecutionPolicy Unrestricted
 
     #Change Directory to filebeat
-    Set-Location -Path 'c:\Filebeat-master\filebeat'
+    Set-Location -Path 'c:\Filebeat-6.5.4\filebeat'
 
     #Stops filebeat from running
     Stop-Service -Force filebeat
@@ -21,7 +21,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
 
     "`nUninstalling Filebeat Now..."
 
-    $Target = "C:\Filebeat-master"
+    $Target = "C:\Filebeat-6.5.4"
 
     Get-ChildItem -Path $Target -Recurse -force |
         Where-Object { -not ($_.pscontainer)} |
