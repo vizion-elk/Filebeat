@@ -1,6 +1,8 @@
 Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser	
 Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope LocalMachine
 Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope Process
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
 
 $principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 
@@ -8,14 +10,26 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
 
     "`nYou are running Powershell with full privilege`n"
 
-    Set-Location -Path 'c:\filebeat-7.7.0\filebeat'
-    Set-ExecutionPolicy Unrestricted
+    #Change Folder to filebeat
+    $currentLocation = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+
+    If ( -Not (Test-Path -Path "$currentLocation\filebeat") )
+    {
+        Write-Host -Object "Path $currentLocation\filebeat does not exit, exiting..." -ForegroundColor Red
+        Exit 1
+    }
+    Else
+    {
+        Set-Location -Path "$currentLocation\filebeat"
+    }
+
+    #Set-ExecutionPolicy Unrestricted
     
     "Filebeatbeat Execution policy set - Success`n"
 
     
     #=========== Filebeat Credentials Form ===========#
-    "`nAdding Filebeat Credentials`n"
+    "Adding Filebeat Credentials`n"
 
     #GUI To Insert User Credentials
     #Pop-up Box that Adds Credentials 
@@ -143,7 +157,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
         return $selectedDirectory
     }
 
-    $directoryPath = Read-FolderBrowserDialog -Message "Select the folder you would like to monitor files from" -InitialDirectory 'C:\' -NoNewFolderButton
+    $directoryPath = Read-FolderBrowserDialog -Message "Select the folder you would like to monitor files from"
 
     #Conditional that doesn't let 
     if (![string]::IsNullOrEmpty($directoryPath)) { 
@@ -157,11 +171,8 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     #Work around that deletes the Linux -var/path
     $data = foreach($line in Get-Content filebeat.yml)
     {
-        if($line -like '*/var/log/*.log*')
+        if($line -notlike '*/var/log*')
         {
-
-        }
-        else {
             $line
         }
     }
@@ -243,7 +254,9 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     # }
 
     #Runs the config test to make sure all data has been inputted correctly
-    .\filebeat.exe -e -configtest
+    #.\filebeat.exe -e -configtest
+    .\filebeat.exe test config
+    .\filebeat.exe test output
 
     #Load filebeat Preconfigured Dashboards
     .\filebeat.exe setup --dashboards
@@ -260,7 +273,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     "`nFilebeat Started. Check Kibana For The Incoming Data!"
 
     #Close Powershell window
-    Stop-Process -Id $PID
+    #Stop-Process -Id $PID
 
 }
 else {
