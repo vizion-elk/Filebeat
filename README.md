@@ -46,7 +46,7 @@ This will install and run filebeat.
 1) Enter the following script into the console using elevated privileges
 
 ```
-curl https://vizion-elk.github.io/elk//beat-install-scripts/install-config-filebeat.sh > install-config-filebeat.sh; chmod a+x  install-config-filebeat.sh; ./install-config-filebeat.sh _PLACEHOLDER_API_ENDPOINT_ _PLACEHOLDER_KIBANA_URL_
+curl https://vizion-elk.github.io/elk//beat-install-scripts/install-config-filebeat.sh > install-config-filebeat.sh; chmod a+x  install-config-filebeat.sh; ./install-config-filebeat.sh _PLACEHOLDER_API_ENDPOINT_ _PLACEHOLDER_KIBANA_URL_ _PLACEHOLDER_USERNAME_ _PLACEHOLDER_PASSWORD_
 ```
 
 2) When prompted, select the proper environment to complete the installation.
