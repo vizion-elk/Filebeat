@@ -14,13 +14,19 @@ Start-BitsTransfer -Source "https://github.com/vizion-elk/Filebeat/archive/7.7.0
 
 2) Unzip the package and extract the contents to the `C:/` drive.
 
-3) Back in Powershell, CD into the extracted folder and run the following script:
+3) Back in Powershell, CD into the extracted folder and run the following command:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+```
+
+4) then run the following script:
 
 ```
 .\installFilebeat.ps1
 ```
 
-4) When prompted, enter your credentials below and click ```OK```.
+5) When prompted, enter your credentials below and click ```OK```.
 
 ```css
 Kibana URL: _PLACEHOLDER_KIBANA_URL_

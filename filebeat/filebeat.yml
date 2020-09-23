@@ -40,6 +40,8 @@ setup.kibana:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["elasticsearch-api-endpoint"]
+  username: ""
+  password: ""
   ssl.verification_mode: none
 
   # Protocol - either `http` (default) or `https`.
